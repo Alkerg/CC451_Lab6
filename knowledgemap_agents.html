@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KnowledgeMap — Generador de Mapas de Conocimiento</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="canvas3d"></canvas>
+    <div id="node-labels"></div>
+
+    <div id="header">
+      <div class="logo-wrap">
+        <div class="logo">Knowledge<span>Map</span></div>
+        <div class="tagline">Generador de Mapas de Conocimiento · AI</div>
+      </div>
+      <div class="nav-pills">
+        <div class="pill">Matemáticas</div>
+        <div class="pill">Ciencias</div>
+        <div class="pill">Humanidades</div>
+        <div class="pill">Programación</div>
+      </div>
+    </div>
+
+    <div id="hint">
+      explora las áreas — haz click en un agente para generar nodos
+    </div>
+
+    <div id="panel">
+      <div id="agent-profile">
+        <div class="a-glow" id="p-emoji"></div>
+        <div class="a-name" id="p-name"></div>
+        <div class="a-role" id="p-role"></div>
+        <div class="a-desc" id="p-desc"></div>
+        <div class="a-expertise">
+          <div class="exp-title">Áreas de expertise</div>
+          <div class="exp-tags" id="p-tags"></div>
+        </div>
+        <div class="a-stats" id="p-stats"></div>
+        <div class="node-output-badge">
+          <div class="nob-label">Output del agente</div>
+          <div class="nob-val" id="p-output"></div>
+        </div>
+      </div>
+
+      <div id="chat-section">
+        <div id="chat-header">
+          <div class="ch-left">
+            <div class="ch-title">Sesión de conocimiento</div>
+            <div class="ch-status">
+              <div class="sdot" id="p-dot"></div>
+              <span class="stext" id="p-status"></span>
+            </div>
+          </div>
+          <button id="close-btn" onclick="closePanel()">&#x2715;</button>
+        </div>
+        <div id="messages"></div>
+        <div id="chat-input-area">
+          <textarea
+            id="chat-input"
+            placeholder="Pregunta al agente — genera nodos de conocimiento..."
+            rows="1"
+            onkeydown="handleKey(event)"
+            oninput="autoResize(this)"
+          ></textarea>
+          <button id="send-btn" onclick="sendMessage()">
+            <svg viewBox="0 0 24 24">
+              <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
