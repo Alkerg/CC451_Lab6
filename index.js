@@ -1,5 +1,5 @@
 
-const GEMINI_API_KEY = "AIzaSyD7K6goxKQDivlxl6mGu9kSVOKTDRz_efI";
+const GEMINI_API_KEY = "YOUR_API_KEY";
 const GEMINI_MODEL = "gemini-3-flash-preview";
 
 
